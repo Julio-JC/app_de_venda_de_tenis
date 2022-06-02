@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         CardItem(
                           imagem: 'imagens/imagem_correr.jpg',
-                          marca: 'Oakley',
+                          marca: 'Okley',
                           nome: 'Zoomx Vaporfly Next% 2 - Feminino',
                         ),
                         CardItem(

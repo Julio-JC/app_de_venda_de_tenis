@@ -3,14 +3,14 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class CardItem extends StatelessWidget {
-  String marca;
-  String nome;
+  String? marca;
+  String? nome;
   double? valor = 0.0;
   String? imagem = '';
 
   CardItem({
-    required this.marca,
-    required this.nome,
+    this.marca,
+    this.nome,
     this.valor,
     this.imagem,
   });
@@ -33,14 +33,14 @@ class CardItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(marca),
+                  Text(marca!),
                   SizedBox(
                     width: 400,
                     child: Divider(
                       color: Colors.deepPurple[100],
                     ),
                   ),
-                  Text(nome),
+                  Text(nome!),
                 ],
               ),
             )
