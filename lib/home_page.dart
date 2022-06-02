@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: Colors.deepPurple[100],
         appBar: AppBar(
-          title: Text('X-Shoes'),
+          title: const Text('X-Shoes'),
         ),
         body: Column(
           children: [
@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Container(
-                      child: Image.asset('imagens/imagem_correr.jpg'),
+                      child: Image.asset('imagens/correr.jpg'),
                     ),
                   ),
                 ],
