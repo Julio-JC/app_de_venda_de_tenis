@@ -27,48 +27,51 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: Container(
-                      child: Image.asset('imagens/correr.jpg'),
+                    child: Expanded(
+                      child: Container(
+                        child: Image.asset('imagens/imagem_correr.jpg'),
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
             Expanded(
+              flex: 2,
               child: Container(
                 child: bodyPage = SafeArea(
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
                         CardItem(
-                          imagem: 'imagens/imagem_correr.jpg',
+                          imagem: 'imagens/imagem1.jpg',
+                          marca: 'Olympikus',
+                          nome: 'Zoomx Vaporfly Next% 2 - Feminino',
+                        ),
+                        CardItem(
+                          imagem: 'imagens/imagem2.jpg',
                           marca: 'Nike',
                           nome: 'Zoomx Vaporfly Next% 2 - Feminino',
                         ),
                         CardItem(
-                          imagem: 'imagens/imagem_correr.jpg',
-                          marca: 'Adodas',
+                          imagem: 'imagens/imagem3.jpg',
+                          marca: 'Adiddas',
                           nome: 'Zoomx Vaporfly Next% 2 - Feminino',
                         ),
                         CardItem(
-                          imagem: 'imagens/imagem_correr.jpg',
-                          marca: 'Pulman',
-                          nome: 'Zoomx Vaporfly Next% 2 - Feminino',
-                        ),
-                        CardItem(
-                          imagem: 'imagens/imagem_correr.jpg',
+                          imagem: 'imagens/imagem4.jpg',
                           marca: 'Vans',
                           nome: 'Zoomx Vaporfly Next% 2 - Feminino',
                         ),
                         CardItem(
-                          imagem: 'imagens/imagem_correr.jpg',
+                          imagem: 'imagens/imagem5.jpg',
                           marca: 'Okley',
                           nome: 'Zoomx Vaporfly Next% 2 - Feminino',
                         ),
                         CardItem(
-                          imagem: 'imagens/imagem_correr.jpg',
+                          imagem: 'imagens/imagem6.jpg',
                           marca: 'Fila',
-                          nome: 'Zoomx Vaporfly Next% 2 - Feminino',
+                          nome: 'imagens/imagem6.jpg',
                         ),
                       ],
                     ),

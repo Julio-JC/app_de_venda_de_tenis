@@ -12,11 +12,22 @@ class Details extends StatelessWidget {
       backgroundColor: Colors.deepPurple[100],
       appBar: AppBar(title: Text('X-Shoes')),
       body: Column(children: [
-        Container(),
+        Expanded(
+          child: Container(
+            child: Text('Imagem'),
+          ),
+        ),
         SizedBox(
           child: Divider(color: Colors.deepPurple[200]),
         ),
-        Container(),
+        Expanded(
+          flex: 2,
+          child: Container(
+            child: Column(children: [
+              Text('Descrição'),
+            ]),
+          ),
+        ),
       ]),
     );
   }
