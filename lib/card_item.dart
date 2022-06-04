@@ -27,13 +27,19 @@ class CardItem extends StatelessWidget {
           children: [
             Expanded(
               child: Padding(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Container(
                   child: TextButton(
                     onPressed: () {
+                      mudarProduto();
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => Details(),
+                          builder: (context) => Details(
+                              imagemDoProduto: imagem,
+                              marcaDoProduto: marca,
+                              nomeDoProduto: nome,
+                              valorDoProduto: valor,
+                              descicaoDoProduto: descricao),
                         ),
                       );
                     },
@@ -61,5 +67,71 @@ class CardItem extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  produto1() {
+    imagem = 'imagens/imagem1.jpg';
+    marca = 'Olympikus';
+    nome = 'Fila Recovery Corrida - Tênis Masculino';
+    valor = 150.00;
+    descricao = 'Item Feito para suas corridas e daminhadas diaias';
+  }
+
+  produto2() {
+    imagem = 'imagens/imagem2.jpg';
+    marca = 'Nike';
+    nome = 'Fila Recovery Corrida - Tênis Masculino';
+    valor = 300.00;
+    descricao = '';
+  }
+
+  produto3() {
+    imagem = 'imagens/imagem3.jpg';
+    marca = 'Olympikus';
+    nome = 'Fila Recovery Corrida - Tênis Masculino';
+    valor = 250.00;
+    descricao = '';
+  }
+
+  produto4() {
+    imagem = 'imagens/imagem4.jpg';
+    marca = 'Olympikus';
+    nome = 'Fila Recovery Corrida - Tênis Masculino';
+    valor = 150.00;
+    descricao = '';
+  }
+
+  produto5() {
+    imagem = 'imagens/imagem5.jpg';
+    marca = 'Olympikus';
+    nome = 'Fila Recovery Corrida - Tênis Masculino';
+    valor = 150.00;
+    descricao = '';
+  }
+
+  produto6() {
+    imagem = 'imagens/imagem6.jpg';
+    marca = 'Olympikus';
+    nome = 'Fila Recovery Corrida - Tênis Masculino';
+    valor = 150.00;
+    descricao = '';
+  }
+
+  var produto;
+
+  mudarProduto() {
+    if (produto == produto1()) {
+      produto = produto1();
+    } else if (produto == produto2()) {
+      produto = produto2();
+    } else if (produto == produto3()) {
+      produto = produto3();
+    } else if (produto == produto4()) {
+      produto = produto4();
+    } else if (produto == produto5()) {
+      produto = produto5();
+    } else if (produto == produto6()) {
+      produto = produto6();
+    }
   }
 }
