@@ -8,14 +8,18 @@ class Details extends StatefulWidget {
   String? nomeDoProduto;
   String? marcaDoProduto;
   double? valorDoProduto;
-  String? descicaoDoProduto;
+  String? descricaoDoProduto;
+  String? tempoDeEntrega;
+  String? corDoProduto;
 
   Details({
     this.imagemDoProduto,
     this.nomeDoProduto,
     this.marcaDoProduto,
     this.valorDoProduto,
-    this.descicaoDoProduto,
+    this.descricaoDoProduto,
+    this.tempoDeEntrega,
+    this.corDoProduto,
   });
 
   @override
@@ -29,10 +33,14 @@ class _DetailsState extends State<Details> {
       backgroundColor: Colors.deepPurple[100],
       appBar: AppBar(title: Text('X-Shoes')),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: Container(
-              child: Image.asset(widget.imagemDoProduto!),
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Container(
+                child: Image.asset(widget.imagemDoProduto!),
+              ),
             ),
           ),
           SizedBox(
@@ -40,14 +48,42 @@ class _DetailsState extends State<Details> {
           ),
           Expanded(
             flex: 2,
-            child: Container(
-              child: Column(
-                children: [
-                  Text(widget.marcaDoProduto!),
-                  Text(widget.nomeDoProduto!),
-                  Text(widget.valorDoProduto.toString()),
-                  Text(widget.descicaoDoProduto!),
-                ],
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Padding(
+                padding: EdgeInsets.all(20),
+                child: Container(
+                  color: Colors.white,
+                  child: Padding(
+                    padding: EdgeInsets.only(),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Text(widget.marcaDoProduto!),
+                        Container(
+                          height: 10,
+                        ),
+                        Text(widget.nomeDoProduto!),
+                        Container(
+                          height: 10,
+                        ),
+                        Text(widget.valorDoProduto.toString()),
+                        Container(
+                          height: 10,
+                        ),
+                        Text(widget.corDoProduto!),
+                        Container(
+                          height: 10,
+                        ),
+                        Text(widget.descricaoDoProduto!),
+                        Container(
+                          height: 10,
+                        ),
+                        Text(widget.tempoDeEntrega!),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
           ),

@@ -1,6 +1,8 @@
 import 'package:app_venda_de_tenis/card_item.dart';
+import 'package:app_venda_de_tenis/card_produto.dart';
 import 'package:flutter/material.dart';
 import 'card_item.dart';
+import 'card_produto.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -46,32 +48,17 @@ class _HomePageState extends State<HomePage> {
                         CardItem(
                           imagem: 'imagens/imagem1.jpg',
                           marca: 'Olympikus',
-                          nome: 'Zoomx Vaporfly Next% 2 - Feminino',
+                          nome: 'Tenis 1',
                         ),
                         CardItem(
                           imagem: 'imagens/imagem2.jpg',
-                          marca: 'Nike',
-                          nome: 'Zoomx Vaporfly Next% 2 - Feminino',
+                          marca: 'Olympikus',
+                          nome: 'Tenis 1',
                         ),
                         CardItem(
                           imagem: 'imagens/imagem3.jpg',
-                          marca: 'Adiddas',
-                          nome: 'Zoomx Vaporfly Next% 2 - Feminino',
-                        ),
-                        CardItem(
-                          imagem: 'imagens/imagem4.jpg',
-                          marca: 'Vans',
-                          nome: 'Zoomx Vaporfly Next% 2 - Feminino',
-                        ),
-                        CardItem(
-                          imagem: 'imagens/imagem5.jpg',
-                          marca: 'Okley',
-                          nome: 'Zoomx Vaporfly Next% 2 - Feminino',
-                        ),
-                        CardItem(
-                          imagem: 'imagens/imagem6.jpg',
-                          marca: 'Fila',
-                          nome: 'imagens/imagem6.jpg',
+                          marca: 'Olympikus',
+                          nome: 'Tenis 1',
                         ),
                       ],
                     ),

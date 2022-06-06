@@ -10,6 +10,8 @@ class CardItem extends StatelessWidget {
   double? valor = 0.0;
   String? imagem = '';
   String? descricao;
+  String? tempoDeEntrega;
+  String? corDoProduto;
 
   CardItem({
     this.marca,
@@ -17,6 +19,8 @@ class CardItem extends StatelessWidget {
     this.valor,
     this.imagem,
     this.descricao,
+    this.tempoDeEntrega,
+    this.corDoProduto,
   });
 
   @override
@@ -39,7 +43,9 @@ class CardItem extends StatelessWidget {
                               marcaDoProduto: marca,
                               nomeDoProduto: nome,
                               valorDoProduto: valor,
-                              descicaoDoProduto: descricao),
+                              descricaoDoProduto: descricao,
+                              corDoProduto: corDoProduto,
+                              tempoDeEntrega: tempoDeEntrega),
                         ),
                       );
                     },
@@ -74,7 +80,9 @@ class CardItem extends StatelessWidget {
     marca = 'Olympikus';
     nome = 'Fila Recovery Corrida - Tênis Masculino';
     valor = 150.00;
+    corDoProduto = 'Preto';
     descricao = 'Item Feito para suas corridas e daminhadas diaias';
+    tempoDeEntrega = 'Entrega em 7 dias uteis.';
   }
 
   produto2() {
@@ -82,7 +90,9 @@ class CardItem extends StatelessWidget {
     marca = 'Nike';
     nome = 'Fila Recovery Corrida - Tênis Masculino';
     valor = 300.00;
+    corDoProduto = 'Branco';
     descricao = '';
+    tempoDeEntrega = 'Entrega em 7 dias uteis.';
   }
 
   produto3() {
@@ -90,7 +100,9 @@ class CardItem extends StatelessWidget {
     marca = 'Olympikus';
     nome = 'Fila Recovery Corrida - Tênis Masculino';
     valor = 250.00;
+    corDoProduto = 'Preto';
     descricao = '';
+    tempoDeEntrega = 'Entrega em 7 dias uteis.';
   }
 
   produto4() {
