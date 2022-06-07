@@ -1,4 +1,4 @@
-class ItemProdutos {
+class Item {
   String? marca;
   String? nome;
   double? valor = 0.0;
@@ -7,7 +7,7 @@ class ItemProdutos {
   String? tempoDeEntrega;
   String? corDoProduto;
 
-  ItemProdutos({
+  Item({
     this.marca,
     this.nome,
     this.valor,

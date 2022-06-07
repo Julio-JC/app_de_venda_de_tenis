@@ -1,26 +1,11 @@
-import 'package:app_venda_de_tenis/card_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'item_poduto.dart';
 
 class Details extends StatefulWidget {
-  String? imagemDoProduto;
-  String? nomeDoProduto;
-  String? marcaDoProduto;
-  double? valorDoProduto;
-  String? descricaoDoProduto;
-  String? tempoDeEntrega;
-  String? corDoProduto;
-
-  Details({
-    this.imagemDoProduto,
-    this.nomeDoProduto,
-    this.marcaDoProduto,
-    this.valorDoProduto,
-    this.descricaoDoProduto,
-    this.tempoDeEntrega,
-    this.corDoProduto,
-  });
+  final Item item;
+  const Details({Key? key, required this.item}) : super(key: key);
 
   @override
   State<Details> createState() => _DetailsState();
@@ -31,63 +16,67 @@ class _DetailsState extends State<Details> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepPurple[100],
-      appBar: AppBar(title: Text('X-Shoes')),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(20),
-              child: Container(
-                child: Image.asset(widget.imagemDoProduto!),
-              ),
-            ),
-          ),
-          SizedBox(
-            child: Divider(color: Colors.deepPurple[200]),
-          ),
-          Expanded(
-            flex: 2,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Padding(
-                padding: EdgeInsets.all(20),
-                child: Container(
-                  color: Colors.white,
+      appBar: AppBar(
+        title: Text(widget.item.marca!),
+      ),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(16, 16, 16, 40),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Container(
+            color: Colors.white,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: Container(
+                    child: Image.asset(widget.item.imagem!),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Expanded(
+                  flex: 2,
                   child: Padding(
-                    padding: EdgeInsets.only(),
+                    padding: const EdgeInsets.only(left: 30),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(widget.marcaDoProduto!),
-                        Container(
+                        Text(widget.item.marca!),
+                        Divider(
                           height: 10,
+                          endIndent: 10,
                         ),
-                        Text(widget.nomeDoProduto!),
-                        Container(
+                        Text(widget.item.nome!),
+                        Divider(
                           height: 10,
+                          endIndent: 10,
                         ),
-                        Text(widget.valorDoProduto.toString()),
-                        Container(
+                        Text(widget.item.valor.toString()),
+                        Divider(
                           height: 10,
+                          endIndent: 10,
                         ),
-                        Text(widget.corDoProduto!),
-                        Container(
+                        Text(widget.item.corDoProduto!),
+                        Divider(
                           height: 10,
+                          endIndent: 10,
                         ),
-                        Text(widget.descricaoDoProduto!),
-                        Container(
-                          height: 10,
+                        Text(widget.item.descricao!),
+                        Divider(
+                          height: 80,
+                          endIndent: 10,
                         ),
-                        Text(widget.tempoDeEntrega!),
+                        Text(widget.item.tempoDeEntrega!),
                       ],
                     ),
                   ),
-                ),
-              ),
+                )
+              ],
             ),
           ),
-        ],
+        ),
       ),
     );
   }

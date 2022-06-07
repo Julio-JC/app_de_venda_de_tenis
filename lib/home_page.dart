@@ -1,6 +1,8 @@
 import 'package:app_venda_de_tenis/card_item.dart';
+import 'package:app_venda_de_tenis/details_page.dart';
 import 'package:app_venda_de_tenis/item_poduto.dart';
 import 'package:flutter/material.dart';
+import 'Poduto.dart';
 import 'card_item.dart';
 import 'item_poduto.dart';
 
@@ -12,8 +14,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  mostrarDetails(Item item) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => Details(item: item),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final tenis = Produtos.tenis;
+
     SafeArea bodyPage;
     return SafeArea(
       child: Scaffold(
@@ -24,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         body: Column(
           children: [
             Padding(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
                   ClipRRect(
@@ -39,28 +52,46 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Expanded(
-              flex: 2,
-              child: Container(
-                child: bodyPage = SafeArea(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        CardItem(
-                          imagem: 'imagens/imagem1.jpg',
-                          marca: 'Olympikus',
-                          nome: 'Tenis 1',
-                        ),
-                        CardItem(
-                          imagem: 'imagens/imagem2.jpg',
-                          marca: 'Nike',
-                          nome: 'Tenis 2',
-                        ),
-                        CardItem(
-                          imagem: 'imagens/imagem3.jpg',
-                          marca: 'Puman',
-                          nome: 'Tenis 3',
-                        ),
-                      ],
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: Container(
+                  child: bodyPage = SafeArea(
+                    child: ListView.separated(
+                      itemBuilder: (BuildContext context, int item) {
+                        return GestureDetector(
+                          onTap: () => mostrarDetails(tenis[item]),
+                          child: Card(
+                            child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: SizedBox(
+                                      height: 80,
+                                      width: 80,
+                                      child: Image.asset(tenis[item].imagem!),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(tenis[item].marca!),
+                                        Divider(
+                                          height: 10,
+                                          endIndent: 10,
+                                        ),
+                                        Text(tenis[item].nome!),
+                                      ],
+                                    ),
+                                  )
+                                ]),
+                          ),
+                        );
+                      },
+                      padding: EdgeInsets.all(10),
+                      separatorBuilder: (_, __) => Divider(),
+                      itemCount: tenis.length,
                     ),
                   ),
                 ),
