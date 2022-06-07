@@ -1,8 +1,8 @@
 import 'package:app_venda_de_tenis/card_item.dart';
-import 'package:app_venda_de_tenis/card_produto.dart';
+import 'package:app_venda_de_tenis/item_poduto.dart';
 import 'package:flutter/material.dart';
 import 'card_item.dart';
-import 'card_produto.dart';
+import 'item_poduto.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
