@@ -35,7 +35,7 @@ class CardItem extends StatelessWidget {
                 child: Container(
                   child: TextButton(
                     onPressed: () {
-                      mudarProduto();
+                      produto3();
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => Details(
@@ -48,6 +48,7 @@ class CardItem extends StatelessWidget {
                               tempoDeEntrega: tempoDeEntrega),
                         ),
                       );
+                      print(marca);
                     },
                     child: Image.asset(imagem!),
                   ),
@@ -75,6 +76,18 @@ class CardItem extends StatelessWidget {
     );
   }
 
+  var produto;
+
+  mudarProduto() {
+    if (produto == produto1()) {
+      produto = produto1();
+    } else if (produto == produto2()) {
+      produto = produto2();
+    } else if (produto == produto3()) {
+      produto = produto3();
+    }
+  }
+
   produto1() {
     imagem = 'imagens/imagem1.jpg';
     marca = 'Olympikus';
@@ -97,53 +110,11 @@ class CardItem extends StatelessWidget {
 
   produto3() {
     imagem = 'imagens/imagem3.jpg';
-    marca = 'Olympikus';
+    marca = 'puman';
     nome = 'Fila Recovery Corrida - Tênis Masculino';
     valor = 250.00;
     corDoProduto = 'Preto';
     descricao = '';
     tempoDeEntrega = 'Entrega em 7 dias uteis.';
-  }
-
-  produto4() {
-    imagem = 'imagens/imagem4.jpg';
-    marca = 'Olympikus';
-    nome = 'Fila Recovery Corrida - Tênis Masculino';
-    valor = 150.00;
-    descricao = '';
-  }
-
-  produto5() {
-    imagem = 'imagens/imagem5.jpg';
-    marca = 'Olympikus';
-    nome = 'Fila Recovery Corrida - Tênis Masculino';
-    valor = 150.00;
-    descricao = '';
-  }
-
-  produto6() {
-    imagem = 'imagens/imagem6.jpg';
-    marca = 'Olympikus';
-    nome = 'Fila Recovery Corrida - Tênis Masculino';
-    valor = 150.00;
-    descricao = '';
-  }
-
-  var produto;
-
-  mudarProduto() {
-    if (produto == produto1()) {
-      produto = produto1();
-    } else if (produto == produto2()) {
-      produto = produto2();
-    } else if (produto == produto3()) {
-      produto = produto3();
-    } else if (produto == produto4()) {
-      produto = produto4();
-    } else if (produto == produto5()) {
-      produto = produto5();
-    } else if (produto == produto6()) {
-      produto = produto6();
-    }
   }
 }

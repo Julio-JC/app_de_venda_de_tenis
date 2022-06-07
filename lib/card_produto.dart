@@ -1,17 +1,19 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+class ItemProdutos {
+  String? marca;
+  String? nome;
+  double? valor = 0.0;
+  String? imagem = '';
+  String? descricao;
+  String? tempoDeEntrega;
+  String? corDoProduto;
 
-class CardProduto extends StatefulWidget {
-  const CardProduto({Key? key}) : super(key: key);
-
-  @override
-  State<CardProduto> createState() => _CardProdutoState();
-}
-
-class _CardProdutoState extends State<CardProduto> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
+  ItemProdutos({
+    this.marca,
+    this.nome,
+    this.valor,
+    this.imagem,
+    this.descricao,
+    this.tempoDeEntrega,
+    this.corDoProduto,
+  });
 }

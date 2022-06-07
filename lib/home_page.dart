@@ -52,13 +52,13 @@ class _HomePageState extends State<HomePage> {
                         ),
                         CardItem(
                           imagem: 'imagens/imagem2.jpg',
-                          marca: 'Olympikus',
-                          nome: 'Tenis 1',
+                          marca: 'Nike',
+                          nome: 'Tenis 2',
                         ),
                         CardItem(
                           imagem: 'imagens/imagem3.jpg',
-                          marca: 'Olympikus',
-                          nome: 'Tenis 1',
+                          marca: 'Puman',
+                          nome: 'Tenis 3',
                         ),
                       ],
                     ),
