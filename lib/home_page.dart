@@ -1,9 +1,7 @@
-import 'package:app_venda_de_tenis/card_item.dart';
 import 'package:app_venda_de_tenis/details_page.dart';
 import 'package:app_venda_de_tenis/item_poduto.dart';
 import 'package:flutter/material.dart';
 import 'Poduto.dart';
-import 'card_item.dart';
 import 'item_poduto.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,8 +28,10 @@ class _HomePageState extends State<HomePage> {
     SafeArea bodyPage;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.deepPurple[100],
+        backgroundColor: Colors.deepPurple[200],
         appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.deepPurple[500],
           title: const Text('X-Shoes'),
         ),
         body: Column(
@@ -44,8 +44,28 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(10),
                     child: Expanded(
                       child: Container(
-                        child: Image.asset('imagens/imagem_correr.jpg'),
-                      ),
+                          child: Stack(
+                        children: [
+                          Image.asset(
+                            'imagens/imagem_correr.jpg',
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, top: 15),
+                            child: Container(
+                              child: const Text(
+                                'X-Shoes, inspirando seus passos',
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+
+                          //Image.asset('imagens/imagem_correr.jpg'),
+                          ),
                     ),
                   ),
                 ],
@@ -61,14 +81,18 @@ class _HomePageState extends State<HomePage> {
                         return GestureDetector(
                           onTap: () => mostrarDetails(tenis[item]),
                           child: Card(
+                            elevation: 8.0,
                             child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Expanded(
-                                    child: SizedBox(
-                                      height: 80,
-                                      width: 80,
-                                      child: Image.asset(tenis[item].imagem!),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: SizedBox(
+                                        height: 90,
+                                        width: 90,
+                                        child: Image.asset(tenis[item].imagem!),
+                                      ),
                                     ),
                                   ),
                                   Expanded(
@@ -76,8 +100,12 @@ class _HomePageState extends State<HomePage> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(tenis[item].marca!),
-                                        Divider(
+                                        Text(
+                                          tenis[item].marca!,
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        const Divider(
                                           height: 10,
                                           endIndent: 10,
                                         ),

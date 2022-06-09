@@ -15,13 +15,14 @@ class Details extends StatefulWidget {
 
 class _DetailsState extends State<Details> {
   int quantidadeDeItem = 1;
-  late double valorTotal = widget.item.valor!;
 
   void acrescentarItem(int item) {
     setState(() {
       quantidadeDeItem += item;
     });
   }
+
+  late double valorTotal = widget.item.valor!;
 
   void acrescentarValor(double valor) {
     setState(() {
@@ -38,8 +39,10 @@ class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[100],
+      backgroundColor: Colors.deepPurple[200],
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple[500],
+        centerTitle: true,
         title: Text(widget.item.marca!),
       ),
       body: Padding(
@@ -52,43 +55,52 @@ class _DetailsState extends State<Details> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Expanded(
-                  child: Container(
-                    child: Image.asset(widget.item.imagem!),
+                  flex: 2,
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Container(
+                      child: Image.asset(widget.item.imagem!),
+                    ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Expanded(
-                  flex: 2,
+                  flex: 3,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 30),
+                    padding: const EdgeInsets.only(left: 20, right: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(widget.item.marca!),
-                        Divider(
+                        Text(
+                          widget.item.marca!,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const Divider(
                           height: 10,
                           endIndent: 10,
                         ),
                         Text(widget.item.nome!),
-                        Divider(
+                        const Divider(
                           height: 10,
                           endIndent: 10,
                         ),
                         Text('R\$ ${widget.item.valor.toString()}'),
-                        Divider(
+                        const Divider(
                           height: 10,
                           endIndent: 10,
                         ),
                         Text('Cor: ${widget.item.corDoProduto!}'),
-                        Divider(
+                        const Divider(
                           height: 10,
                           endIndent: 10,
                         ),
                         Text(widget.item.descricao!),
-                        Divider(
-                          height: 80,
+                        const Divider(
+                          height: 40,
                           endIndent: 10,
                         ),
                         Text(widget.item.tempoDeEntrega!),
@@ -96,7 +108,7 @@ class _DetailsState extends State<Details> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 Expanded(
@@ -107,25 +119,42 @@ class _DetailsState extends State<Details> {
                       children: [
                         Text(
                           'Quantidades de itens no carrinho: $quantidadeDeItem',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
-                        Text('Total a pagar: $valorTotal'),
+                        Text(
+                          'Total a pagar: $valorTotal',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.only(
-                      left: 30,
-                      right: 30,
-                    ),
+                    padding:
+                        const EdgeInsets.only(left: 30, right: 30, bottom: 20),
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ElevatedButton(
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                              ),
+                              minimumSize: MaterialStateProperty.all(
+                                Size(100, 40),
+                              ),
+                            ),
                             onPressed: quantidadeDeItem > 8
                                 ? null
                                 : () {
@@ -133,16 +162,28 @@ class _DetailsState extends State<Details> {
                                     acrescentarValor(1);
                                     print(valorTotal);
                                   },
-                            child: Text('Adicionar'),
+                            child: const Text('Adicionar Item'),
+                          ),
+                          Container(
+                            width: 60,
                           ),
                           ElevatedButton(
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                              ),
+                              minimumSize:
+                                  MaterialStateProperty.all(Size(100, 40)),
+                            ),
                             onPressed: quantidadeDeItem < 2
                                 ? null
                                 : () {
                                     acrescentarItem(-1);
                                     decrescentarValor(-1);
                                   },
-                            child: Text('Retirar'),
+                            child: const Text('Retirar Item'),
                           ),
                         ]),
                   ),
