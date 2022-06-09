@@ -5,10 +5,10 @@ class Produtos {
     Item(
       imagem: 'imagens/imagem1.jpg',
       marca: 'Olympikus',
-      nome: 'Tenis 1',
+      nome: 'Fila Recovery Corrida',
       valor: 150.00,
       corDoProduto: 'Preto',
-      descricao: ',mvlsfjlskfgsdk',
+      descricao: '',
       tempoDeEntrega: ' Prazo de entrega 7 dias uteis',
     ),
     Item(

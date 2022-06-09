@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'item_poduto.dart';
+import 'Poduto.dart';
 
 class Details extends StatefulWidget {
   final Item item;
+
   const Details({Key? key, required this.item}) : super(key: key);
 
   @override
@@ -12,6 +14,27 @@ class Details extends StatefulWidget {
 }
 
 class _DetailsState extends State<Details> {
+  int quantidadeDeItem = 1;
+  late double valorTotal = widget.item.valor!;
+
+  void acrescentarItem(int item) {
+    setState(() {
+      quantidadeDeItem += item;
+    });
+  }
+
+  void acrescentarValor(double valor) {
+    setState(() {
+      valorTotal += widget.item.valor!;
+    });
+  }
+
+  void decrescentarValor(double valor) {
+    setState(() {
+      valorTotal -= widget.item.valor!;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,12 +76,12 @@ class _DetailsState extends State<Details> {
                           height: 10,
                           endIndent: 10,
                         ),
-                        Text(widget.item.valor.toString()),
+                        Text('R\$ ${widget.item.valor.toString()}'),
                         Divider(
                           height: 10,
                           endIndent: 10,
                         ),
-                        Text(widget.item.corDoProduto!),
+                        Text('Cor: ${widget.item.corDoProduto!}'),
                         Divider(
                           height: 10,
                           endIndent: 10,
@@ -72,7 +95,58 @@ class _DetailsState extends State<Details> {
                       ],
                     ),
                   ),
-                )
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 30),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Quantidades de itens no carrinho: $quantidadeDeItem',
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text('Total a pagar: $valorTotal'),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 30,
+                      right: 30,
+                    ),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ElevatedButton(
+                            onPressed: quantidadeDeItem > 8
+                                ? null
+                                : () {
+                                    acrescentarItem(1);
+                                    acrescentarValor(1);
+                                    print(valorTotal);
+                                  },
+                            child: Text('Adicionar'),
+                          ),
+                          ElevatedButton(
+                            onPressed: quantidadeDeItem < 2
+                                ? null
+                                : () {
+                                    acrescentarItem(-1);
+                                    decrescentarValor(-1);
+                                  },
+                            child: Text('Retirar'),
+                          ),
+                        ]),
+                  ),
+                ),
               ],
             ),
           ),
