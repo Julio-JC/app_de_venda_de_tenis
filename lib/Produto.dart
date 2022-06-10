@@ -56,7 +56,7 @@ class Produtos {
       imagem: 'imagens/imagem6.jpg',
       marca: 'Fila',
       nome: 'Recovery Corrida - Tênis Masculino',
-      valor: 250.99,
+      valor: 250.00,
       corDoProduto: 'Branco',
       descricao:
           'Com design moderno e único, o Tênis Fila Recovery Masculino chama a atenção pela sua beleza e conforto. Esse tênis para correr é confeccionado com material respirável,',
@@ -75,7 +75,7 @@ class Produtos {
       imagem: 'imagens/imagem8.jpg',
       marca: 'Reebuk',
       nome: 'Nano X - Tênis Masculino',
-      valor: 375.99,
+      valor: 375.00,
       corDoProduto: 'Branco',
       descricao:
           'Um tênis para corridas e caminhadas leves e próprio para academia.',

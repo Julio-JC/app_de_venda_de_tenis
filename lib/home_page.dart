@@ -1,7 +1,7 @@
 import 'package:app_venda_de_tenis/details_page.dart';
 import 'package:app_venda_de_tenis/item_poduto.dart';
 import 'package:flutter/material.dart';
-import 'Poduto.dart';
+import 'Produto.dart';
 import 'item_poduto.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => Details(item: item),
+        builder: (_) => DetailsPage(item: item),
       ),
     );
   }
@@ -56,9 +56,10 @@ class _HomePageState extends State<HomePage> {
                                 child: const Text(
                                   'X-Shoes, inspirando seus passos',
                                   style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
+                                    fontSize: 15,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),

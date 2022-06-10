@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'item_poduto.dart';
+import 'Produto.dart';
 
-class Details extends StatefulWidget {
-  final Item item;
+class DetailsPage extends StatefulWidget {
+  Item item;
 
-  const Details({Key? key, required this.item}) : super(key: key);
+  DetailsPage({Key? key, required this.item}) : super(key: key);
 
   @override
-  State<Details> createState() => _DetailsState();
+  State<DetailsPage> createState() => _DetailsState();
 }
 
-class _DetailsState extends State<Details> {
+class _DetailsState extends State<DetailsPage> {
   int quantidadeDeItem = 1;
 
   void acrescentarItem(int item) {
@@ -45,7 +46,7 @@ class _DetailsState extends State<Details> {
         title: Text(widget.item.marca!),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 16, 16, 40),
+        padding: EdgeInsets.fromLTRB(16, 16, 16, 40),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: Container(
@@ -56,13 +57,13 @@ class _DetailsState extends State<Details> {
                 Expanded(
                   flex: 2,
                   child: Padding(
-                    padding: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
                     child: Container(
                       child: Image.asset(widget.item.imagem!),
                     ),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
                 Expanded(
@@ -92,7 +93,7 @@ class _DetailsState extends State<Details> {
                           height: 10,
                           endIndent: 10,
                         ),
-                        Text('Cor: ${widget.item.corDoProduto!}'),
+                        Text('Cor: ${widget.item.corDoProduto}'),
                         const Divider(
                           height: 10,
                           endIndent: 10,
@@ -154,7 +155,7 @@ class _DetailsState extends State<Details> {
                                 ),
                               ),
                               minimumSize: MaterialStateProperty.all(
-                                const Size(100, 40),
+                                Size(100, 40),
                               ),
                             ),
                             onPressed: quantidadeDeItem > 8
@@ -162,6 +163,7 @@ class _DetailsState extends State<Details> {
                                 : () {
                                     acrescentarItem(1);
                                     acrescentarValor(1);
+                                    print(valorTotal);
                                   },
                             child: const Text('Adicionar Item'),
                           ),
@@ -178,8 +180,8 @@ class _DetailsState extends State<Details> {
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
                               ),
-                              minimumSize: MaterialStateProperty.all(
-                                  const Size(100, 40)),
+                              minimumSize:
+                                  MaterialStateProperty.all(Size(100, 40)),
                             ),
                             onPressed: quantidadeDeItem < 2
                                 ? null
