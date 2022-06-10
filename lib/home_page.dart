@@ -1,8 +1,8 @@
 import 'package:app_venda_de_tenis/details_page.dart';
-import 'package:app_venda_de_tenis/item_poduto.dart';
+import 'package:app_venda_de_tenis/item_produto.dart';
 import 'package:flutter/material.dart';
 import 'Produto.dart';
-import 'item_poduto.dart';
+import 'item_produto.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -25,7 +25,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final tenis = Produtos.tenis;
 
-    SafeArea bodyPage;
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.deepPurple[200],
@@ -42,30 +41,28 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: Expanded(
-                      child: Container(
-                        //Para colocar um texto sobre a foto foi usado o Stack
-                        child: Stack(
-                          children: [
-                            Image.asset(
-                              'imagens/imagem_correr.jpg',
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 10, top: 15),
-                              child: Container(
-                                child: const Text(
-                                  'X-Shoes, inspirando seus passos',
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FontStyle.italic,
-                                  ),
+                    child: SizedBox(
+                      //Para colocar um texto sobre a foto foi usado o Stack
+                      child: Stack(
+                        children: [
+                          Image.asset(
+                            'imagens/imagem_correr.jpg',
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 10, top: 15),
+                            child: SizedBox(
+                              child: Text(
+                                'X-Shoes, inspirando seus passos',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic,
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -76,8 +73,8 @@ class _HomePageState extends State<HomePage> {
               flex: 2,
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 10),
-                child: Container(
-                  child: bodyPage = SafeArea(
+                child: SizedBox(
+                  child: SafeArea(
                     child: ListView.separated(
                       itemBuilder: (BuildContext context, int item) {
                         return GestureDetector(
@@ -122,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                         );
                       },
                       padding: const EdgeInsets.all(10),
-                      separatorBuilder: (_, __) => Divider(),
+                      separatorBuilder: (_, __) => const Divider(),
                       itemCount: tenis.length,
                     ),
                   ),

@@ -1,4 +1,4 @@
-import 'item_poduto.dart';
+import 'item_produto.dart';
 
 class Produtos {
   static List<Item> tenis = [
