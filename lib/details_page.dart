@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'item_poduto.dart';
-import 'Poduto.dart';
 
 class Details extends StatefulWidget {
   final Item item;
@@ -46,7 +45,7 @@ class _DetailsState extends State<Details> {
         title: Text(widget.item.marca!),
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(16, 16, 16, 40),
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 40),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: Container(
@@ -57,7 +56,7 @@ class _DetailsState extends State<Details> {
                 Expanded(
                   flex: 2,
                   child: Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Container(
                       child: Image.asset(widget.item.imagem!),
                     ),
@@ -155,7 +154,7 @@ class _DetailsState extends State<Details> {
                                 ),
                               ),
                               minimumSize: MaterialStateProperty.all(
-                                Size(100, 40),
+                                const Size(100, 40),
                               ),
                             ),
                             onPressed: quantidadeDeItem > 8
@@ -163,7 +162,6 @@ class _DetailsState extends State<Details> {
                                 : () {
                                     acrescentarItem(1);
                                     acrescentarValor(1);
-                                    print(valorTotal);
                                   },
                             child: const Text('Adicionar Item'),
                           ),
@@ -180,8 +178,8 @@ class _DetailsState extends State<Details> {
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
                               ),
-                              minimumSize:
-                                  MaterialStateProperty.all(Size(100, 40)),
+                              minimumSize: MaterialStateProperty.all(
+                                  const Size(100, 40)),
                             ),
                             onPressed: quantidadeDeItem < 2
                                 ? null
