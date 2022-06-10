@@ -77,6 +77,7 @@ class _DetailsState extends State<DetailsPage> {
                           widget.item.marca!,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
                           ),
                         ),
                         const Divider(

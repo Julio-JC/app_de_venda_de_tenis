@@ -59,6 +59,7 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 15,
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
+                                    fontStyle: FontStyle.italic,
                                   ),
                                 ),
                               ),
@@ -105,6 +106,7 @@ class _HomePageState extends State<HomePage> {
                                           tenis[item].marca!,
                                           style: const TextStyle(
                                             fontWeight: FontWeight.bold,
+                                            fontStyle: FontStyle.italic,
                                           ),
                                         ),
                                         const Divider(
