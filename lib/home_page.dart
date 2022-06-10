@@ -44,34 +44,34 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(10),
                     child: Expanded(
                       child: Container(
-                          child: Stack(
-                        children: [
-                          Image.asset(
-                            'imagens/imagem_correr.jpg',
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10, top: 15),
-                            child: Container(
-                              child: const Text(
-                                'X-Shoes, inspirando seus passos',
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
+                        //Para colocar um texto sobre a foto foi usado o Stack
+                        child: Stack(
+                          children: [
+                            Image.asset(
+                              'imagens/imagem_correr.jpg',
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10, top: 15),
+                              child: Container(
+                                child: const Text(
+                                  'X-Shoes, inspirando seus passos',
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      )
-
-                          //Image.asset('imagens/imagem_correr.jpg'),
-                          ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
             Expanded(
+              flex: 2,
               child: Padding(
                 padding: EdgeInsets.only(bottom: 10),
                 child: Container(

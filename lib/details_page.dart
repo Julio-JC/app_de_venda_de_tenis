@@ -75,7 +75,7 @@ class _DetailsState extends State<Details> {
                       children: [
                         Text(
                           widget.item.marca!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -113,13 +113,13 @@ class _DetailsState extends State<Details> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.only(left: 30),
+                    padding: const EdgeInsets.only(left: 30),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Quantidades de itens no carrinho: $quantidadeDeItem',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -128,7 +128,7 @@ class _DetailsState extends State<Details> {
                         ),
                         Text(
                           'Total a pagar: $valorTotal',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
@@ -146,6 +146,9 @@ class _DetailsState extends State<Details> {
                         children: [
                           ElevatedButton(
                             style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                Colors.deepPurple[500],
+                              ),
                               shape: MaterialStateProperty.all(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(16.0),
@@ -169,6 +172,9 @@ class _DetailsState extends State<Details> {
                           ),
                           ElevatedButton(
                             style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                Colors.deepPurple[500],
+                              ),
                               shape: MaterialStateProperty.all(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(16.0),
