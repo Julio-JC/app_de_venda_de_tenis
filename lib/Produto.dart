@@ -66,17 +66,18 @@ class Produtos {
       imagem: 'imagens/imagem7.jpg',
       marca: 'Mizuno',
       nome: 'Mirai Original Corrida Esportivo',
-      valor: 200.00,
-      corDoProduto: 'Branco',
+      valor: 375.00,
+      corDoProduto: 'Azul',
       descricao:
           'Tênis Mizuno Mirai 3 é uma opção perfeita para treinos e academia, devido seu cabedal todo confeccionado em material respirável, leve e resistente.',
+      tempoDeEntrega: 'Prazo de entrega 7 dias uteis',
     ),
     Item(
       imagem: 'imagens/imagem8.jpg',
       marca: 'Reebuk',
       nome: 'Nano X - Tênis Masculino',
       valor: 375.00,
-      corDoProduto: 'Branco',
+      corDoProduto: 'Preto',
       descricao:
           'Um tênis para corridas e caminhadas leves e próprio para academia.',
       tempoDeEntrega: ' Prazo de entrega 7 dias uteis',

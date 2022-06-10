@@ -93,7 +93,7 @@ class _DetailsState extends State<DetailsPage> {
                           height: 10,
                           endIndent: 10,
                         ),
-                        Text('Cor: ${widget.item.corDoProduto}'),
+                        Text('Cor: ${widget.item.corDoProduto!}'),
                         const Divider(
                           height: 10,
                           endIndent: 10,
