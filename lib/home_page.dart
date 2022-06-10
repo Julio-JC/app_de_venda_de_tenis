@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               flex: 2,
               child: Padding(
-                padding: EdgeInsets.only(bottom: 10),
+                padding: const EdgeInsets.only(bottom: 10),
                 child: Container(
                   child: bodyPage = SafeArea(
                     child: ListView.separated(
@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Expanded(
                                     child: Padding(
-                                      padding: EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.all(8.0),
                                       child: SizedBox(
                                         height: 90,
                                         width: 90,
@@ -103,7 +103,8 @@ class _HomePageState extends State<HomePage> {
                                         Text(
                                           tenis[item].marca!,
                                           style: const TextStyle(
-                                              fontWeight: FontWeight.bold),
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
                                         const Divider(
                                           height: 10,
