@@ -5,9 +5,9 @@ import 'item_poduto.dart';
 import 'Produto.dart';
 
 class DetailsPage extends StatefulWidget {
-  Item item;
+  final Item item;
 
-  DetailsPage({Key? key, required this.item}) : super(key: key);
+  const DetailsPage({Key? key, required this.item}) : super(key: key);
 
   @override
   State<DetailsPage> createState() => _DetailsState();
@@ -57,7 +57,7 @@ class _DetailsState extends State<DetailsPage> {
                 Expanded(
                   flex: 2,
                   child: Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Container(
                       child: Image.asset(widget.item.imagem!),
                     ),

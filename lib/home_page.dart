@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         );
                       },
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       separatorBuilder: (_, __) => Divider(),
                       itemCount: tenis.length,
                     ),
