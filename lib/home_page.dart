@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // Foi criado uma vaiavel que recebe o valor do arquivo podutos.tenis
     final tenis = Produtos.tenis;
 
     return SafeArea(
@@ -75,7 +76,9 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(bottom: 10),
                 child: SizedBox(
                   child: SafeArea(
+                    // Foi usado o ListView. Separated pois ele deixa um espo entro linhas.
                     child: ListView.separated(
+                      // o nome do int que é item foi dado para repesentar o indice do arquivo produto.
                       itemBuilder: (BuildContext context, int item) {
                         return GestureDetector(
                           onTap: () => mostrarDetails(tenis[item]),
@@ -90,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                                       child: SizedBox(
                                         height: 90,
                                         width: 90,
-                                        child: Image.asset(tenis[item].imagem!),
+                                        child: Image.asset(tenis[item].imagem),
                                       ),
                                     ),
                                   ),
@@ -100,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          tenis[item].marca!,
+                                          tenis[item].marca,
                                           style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontStyle: FontStyle.italic,
@@ -110,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                                           height: 10,
                                           endIndent: 10,
                                         ),
-                                        Text(tenis[item].nome!),
+                                        Text(tenis[item].nome),
                                       ],
                                     ),
                                   )

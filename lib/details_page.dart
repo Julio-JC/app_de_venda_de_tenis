@@ -12,24 +12,27 @@ class DetailsPage extends StatefulWidget {
 
 class _DetailsState extends State<DetailsPage> {
   int quantidadeDeItem = 1;
-
+  //Para que os item sejam acrescentados e decrescentados de 1 em um foi criado
+  //o método "acesentarItem(){}"
   void acrescentarItem(int item) {
     setState(() {
       quantidadeDeItem += item;
     });
   }
 
-  late double valorTotal = widget.item.valor!;
+  // Para soma e subitrair valores aos produtos foi criado dois métodos o acrescentarValor(){}
+  //e o decresentarValor(){}
+  late double valorTotal = widget.item.valor;
 
   void acrescentarValor(double valor) {
     setState(() {
-      valorTotal += widget.item.valor!;
+      valorTotal += widget.item.valor;
     });
   }
 
   void decrescentarValor(double valor) {
     setState(() {
-      valorTotal -= widget.item.valor!;
+      valorTotal -= widget.item.valor;
     });
   }
 
@@ -40,7 +43,7 @@ class _DetailsState extends State<DetailsPage> {
       appBar: AppBar(
         backgroundColor: Colors.deepPurple[500],
         centerTitle: true,
-        title: Text(widget.item.marca!),
+        title: Text(widget.item.marca),
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 40),
@@ -55,7 +58,7 @@ class _DetailsState extends State<DetailsPage> {
                   flex: 2,
                   child: Padding(
                     padding: const EdgeInsets.all(10),
-                    child: Image.asset(widget.item.imagem!),
+                    child: Image.asset(widget.item.imagem),
                   ),
                 ),
                 const SizedBox(
@@ -69,7 +72,7 @@ class _DetailsState extends State<DetailsPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.item.marca!,
+                          widget.item.marca,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.italic,
@@ -79,7 +82,7 @@ class _DetailsState extends State<DetailsPage> {
                           height: 10,
                           endIndent: 10,
                         ),
-                        Text(widget.item.nome!),
+                        Text(widget.item.nome),
                         const Divider(
                           height: 10,
                           endIndent: 10,
@@ -89,17 +92,17 @@ class _DetailsState extends State<DetailsPage> {
                           height: 10,
                           endIndent: 10,
                         ),
-                        Text('Cor: ${widget.item.corDoProduto!}'),
+                        Text('Cor: ${widget.item.corDoProduto}'),
                         const Divider(
                           height: 10,
                           endIndent: 10,
                         ),
-                        Text(widget.item.descricao!),
+                        Text(widget.item.descricao),
                         const Divider(
                           height: 40,
                           endIndent: 10,
                         ),
-                        Text(widget.item.tempoDeEntrega!),
+                        Text(widget.item.tempoDeEntrega),
                       ],
                     ),
                   ),
